@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2017-05-15T14:38:46.824-0300</date>
+  <logger>PAULO VITOR SOUTO DANTAS</logger>
+  <level>FINE</level>
+  <message>File 115211312-PAULO VITOR SOUTO DANTAS.zip was received. It was sent by PAULO VITOR SOUTO DANTAS from IP 127.0.1.1</message>
+</record>

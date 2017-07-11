@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2017-06-26T14:25:35.454-0300</date>
+  <logger>PAULO VITOR SOUTO DANTAS</logger>
+  <level>FINE</level>
+  <message>File 115211312-PAULO VITOR SOUTO DANTAS.zip was received. It was sent by PAULO VITOR SOUTO DANTAS from IP 127.0.1.1</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2017-06-26T20:57:42.749-0300</date>
+  <logger>PAULO VITOR SOUTO DANTAS</logger>
+  <level>FINE</level>
+  <message>File 115211312-PAULO VITOR SOUTO DANTAS.zip was received. It was sent by PAULO VITOR SOUTO DANTAS from IP 127.0.1.1</message>
+</record>
