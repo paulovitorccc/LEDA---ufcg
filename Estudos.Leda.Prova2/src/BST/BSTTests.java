@@ -60,7 +60,7 @@ public class BSTTests<T extends Comparable<T>> {
 		}
 	}
 	//IMPLEMENTACAO CORRETA
-	//saber se um elemento é filho de outro
+	//saber se um elemento e filho de outro
 	public boolean isDecendent (BSTImpl<T> bt, T d, T p) {
 		boolean result = false;
 		BTNode<T> node = bt.search(p);
@@ -88,6 +88,63 @@ public class BSTTests<T extends Comparable<T>> {
 		}
 		return result;
 	}
+	// tentando fazer a prova de melina
+	//metodo para saber o grau entre dois primos
+	//falta tratar no metodo se for o caso de os elementos na forem primos
+	public int isCousinFor(BSTImpl<T> bst, T primo1, T primo2){
+		BTNode<T> nodePrimo1 = bst.search(primo1);
+		int distanciaPrimo1;
+		int distanciaPrimo2;
+		if(nodePrimo1.equals(new BTNode<T>())){
+			return -1;
+		} else {
+			distanciaPrimo1 = distanciaDaRaiz(bst,bst.getRoot() ,nodePrimo1, 0);	
+		}
+		BTNode<T> nodePrimo2 = bst.search(primo2);
+		if(nodePrimo2.equals(new BTNode<T>())){
+			return -1;
+		} else {
+			distanciaPrimo2 = distanciaDaRaiz(bst,bst.getRoot() ,nodePrimo2, 0);
+		}
+		int diferencaEntreDistancias = Math.abs(distanciaPrimo1 - distanciaPrimo2);
+		return diferencaEntreDistancias + 1;
+	}
+	
+	private int distanciaDaRaiz(BSTImpl<T> bst, BTNode<T> node ,BTNode<T> primo, int count){
+		if(node.isEmpty()) {
+			return 0;
+		} else if(node.getData().compareTo(primo.getData()) > 0){
+			return distanciaDaRaiz(bst, node.getLeft(), primo, count + 1);
+		} else if(node.getData().compareTo(primo.getData()) < 0){
+			return distanciaDaRaiz(bst, node.getRight(), primo, count + 1);
+		} else {
+			return count;
+		}
+	}
+	
+	//metodo para saber qual a folha mais proxima da raiz
+	//FALTA IMPLEMENTAR
+	private void menorAltura(BSTImpl<T> bst){
+		
+	}
+	
+	private int menorAltura(BSTNode<T> node) {
+		if (node.isEmpty()) {
+			return -1;
+		} else {
+			int heightLeft = menorAltura((BSTNode<T>) node.getLeft());
+			int heightRight = menorAltura((BSTNode<T>) node.getRight());
+			int menor;
+			if (heightLeft < heightRight) {
+				menor = heightLeft;
+			} else {
+				menor = heightRight;
+			}
+			return 1 + menor;
+		}
+	}
+	
+	
 	
 	
 	

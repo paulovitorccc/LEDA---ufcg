@@ -22,9 +22,8 @@ public class Main {
 		bst2.insert(20);
 		bst2.insert(21);
 		
-		System.out.println(ie.isEquals(bst1, bst2));
-		System.out.println(ie.qtdFolhas(bst2));
-		System.out.println(ie.isDecendent(bst2, 21, 3));
+		System.out.println(ie.isCousinFor(bst2, 3, 2));
+		
 		
 		
 	}

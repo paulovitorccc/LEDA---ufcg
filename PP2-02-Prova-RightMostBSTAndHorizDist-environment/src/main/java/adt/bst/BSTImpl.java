@@ -1,4 +1,4 @@
-package BST;
+package adt.bst;
 
 public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 
@@ -333,7 +333,7 @@ public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 		return size(root);
 	}
 
-	public int size(BSTNode<T> node) {
+	private int size(BSTNode<T> node) {
 		int result = 0;
 		// base case means doing nothing (return 0)
 		if (!node.isEmpty()) { // indusctive case
