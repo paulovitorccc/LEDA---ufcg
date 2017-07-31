@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2017-02-20T14:10:55.991-0300</date>
+  <logger>RUBENS BATISTA ARAUJO DE SOUSA</logger>
+  <level>FINE</level>
+  <message>File 115211161-RUBENS BATISTA ARAUJO DE SOUSA.zip was received. It was sent by RUBENS BATISTA ARAUJO DE SOUSA from IP 150.165.74.122</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2017-02-21T21:08:19.168-0300</date>
+  <logger>RUBENS BATISTA ARAUJO DE SOUSA</logger>
+  <level>FINE</level>
+  <message>File 115211161-RUBENS BATISTA ARAUJO DE SOUSA.zip was received. It was sent by RUBENS BATISTA ARAUJO DE SOUSA from IP 192.168.1.6</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2017-02-21T21:12:46.451-0300</date>
+  <logger>RUBENS BATISTA ARAUJO DE SOUSA</logger>
+  <level>FINE</level>
+  <message>File 115211161-RUBENS BATISTA ARAUJO DE SOUSA.zip was received. It was sent by RUBENS BATISTA ARAUJO DE SOUSA from IP 192.168.1.6</message>
+</record>
