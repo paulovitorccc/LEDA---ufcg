@@ -30,22 +30,24 @@ public class SkipListImpl<T> implements SkipList<T> {
 
 	@Override
 	public void insert(int key, T newValue, int height) {
-		SkipListNode<T>[] update = new SkipListNode[maxHeight];
-		SkipListNode<T> node = root;
-		for (int i = maxHeight - 1; i >= 0; i--) {
-			while ((node.getForward(i).getValue() != null) && (node.getForward(i).getKey() < key)) {
-				node = node.getForward(i);
+		if (height <= maxHeight) {
+			SkipListNode<T>[] update = new SkipListNode[maxHeight];
+			SkipListNode<T> node = root;
+			for (int i = maxHeight - 1; i >= 0; i--) {
+				while ((node.getForward(i).getValue() != null) && (node.getForward(i).getKey() < key)) {
+					node = node.getForward(i);
+				}
+				update[i] = node;
 			}
-			update[i] = node;
-		}
-		node = node.getForward(0);
-		if (node.getKey() == key) {
-			node.setValue(newValue);
-		} else {
-			SkipListNode<T> newNode = new SkipListNode<T>(key, height, newValue);
-			for (int j = 0; j < height; j++) {
-				newNode.forward[j] = update[j].forward[j];
-				update[j].forward[j] = newNode;
+			node = node.getForward(0);
+			if (node.getKey() == key) {
+				node.setValue(newValue);
+			} else {
+				SkipListNode<T> newNode = new SkipListNode<T>(key, height, newValue);
+				for (int j = 0; j < height; j++) {
+					newNode.forward[j] = update[j].forward[j];
+					update[j].forward[j] = newNode;
+				}
 			}
 		}
 	}
