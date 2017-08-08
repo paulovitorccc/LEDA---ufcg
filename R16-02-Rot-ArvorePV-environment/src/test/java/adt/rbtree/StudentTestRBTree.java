@@ -20,8 +20,10 @@ public class StudentTestRBTree {
 	public void testInsert0() {
 		Integer[] preOrder = { 11 };
 		Colour[] preOrderColour = { Colour.BLACK };
-
+		
+		assertEquals(0, myRB.blackHeight());
 		myRB.insert(11);
+		assertEquals(1, myRB.blackHeight());
 
 		int len = myRB.size();
 		RBNode<Integer>[] result = myRB.rbPreOrder();

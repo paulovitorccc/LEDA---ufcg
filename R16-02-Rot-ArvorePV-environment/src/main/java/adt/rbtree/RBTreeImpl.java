@@ -12,13 +12,7 @@ public class RBTreeImpl<T extends Comparable<T>> extends BSTImpl<T> implements R
 	}
 
 	protected int blackHeight() {
-		int result;
-		if (isEmpty()) {
-			result = -1;
-		} else {
-			result = blackHeight(this.root);
-		}
-		return result;
+		return blackHeight(this.root);
 	}
 
 	private int blackHeight(BSTNode<T> node) {
@@ -93,7 +87,12 @@ public class RBTreeImpl<T extends Comparable<T>> extends BSTImpl<T> implements R
 	 * returns an exception if the black heights are different.
 	 */
 	private boolean verifyBlackHeight() {
-		return verifyBlackHeight(this.root);
+		boolean status = verifyBlackHeight(this.root);
+		if(status == false){
+			throw new RuntimeException();
+		} else {
+			return status;
+		}
 	}
 
 	private boolean verifyBlackHeight(BSTNode<T> node) {
