@@ -1,7 +1,7 @@
 
 public interface LinkedList<T> {
 
-	public void insert();
+	public void insert(T element);
 
 	public void remove(T element);
 

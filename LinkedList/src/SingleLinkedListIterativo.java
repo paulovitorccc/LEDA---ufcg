@@ -1,46 +1,83 @@
 
 public class SingleLinkedListIterativo<T> implements LinkedList<T> {
 
-	NodeSingleLinkedList<T> head;
-	
-	public SingleLinkedListIterativo(){
+	protected NodeSingleLinkedList<T> head;
+
+	public SingleLinkedListIterativo() {
 		this.head = new NodeSingleLinkedList<T>();
 	}
 
 	@Override
-	public void insert() {
-		// TODO Auto-generated method stub
-		
+	public void insert(T element) {
+		NodeSingleLinkedList<T> nodeAdd = new 	NodeSingleLinkedList<T>(element, new NodeSingleLinkedList<>());
+
+		if (head.isNIL()) {
+			head = nodeAdd;
+		} else {
+			NodeSingleLinkedList<T> nodeAuxiliar = head;
+
+			while (!nodeAuxiliar.next.isNIL()) {
+				nodeAuxiliar = nodeAuxiliar.next;
+			}
+
+			nodeAdd.next = nodeAuxiliar.next;
+			nodeAuxiliar.next = nodeAdd;
+		}
 	}
 
 	@Override
 	public void remove(T element) {
-		// TODO Auto-generated method stub
-		
+		NodeSingleLinkedList<T> nodeAuxParent = this.head;
+		NodeSingleLinkedList<T> nodeAux = this.head;
+		if (head.getData() == element) {
+			head = head.getNext();
+		} else {
+			while (!nodeAux.isNIL() && !nodeAux.getData().equals(element)) {
+				nodeAuxParent = nodeAux;
+				nodeAux = nodeAux.getNext();
+			}
+			if (nodeAux.getData().equals(element)) {
+				nodeAuxParent.setNext(nodeAux.getNext());
+			}
+		}
 	}
 
 	@Override
 	public T search(T element) {
-		// TODO Auto-generated method stub
-		return null;
+		T result;
+		NodeSingleLinkedList<T> nodeAux = this.head;
+		while (!nodeAux.isNIL() && !nodeAux.getData().equals(element)) {
+			nodeAux = nodeAux.getNext();
+		}
+		result = nodeAux.getData();
+		return result;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.head.isNIL();
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		int cont = 0;
+		NodeSingleLinkedList<T> nodeAux = this.head;
+		while (!nodeAux.isNIL()) {
+			nodeAux = nodeAux.getNext();
+			cont++;
+		}
+		return cont;
 	}
 
 	@Override
 	public T[] toArray() {
-		// TODO Auto-generated method stub
-		return null;
+		T[] array = (T[]) new Object[size()];
+		int cont = 0;
+		NodeSingleLinkedList<T> nodeAux = this.head;
+		while (!nodeAux.isNIL()) {
+			array[cont] = nodeAux.getData();
+			nodeAux = nodeAux.getNext();
+		}
+		return array;
 	}
-	
 }

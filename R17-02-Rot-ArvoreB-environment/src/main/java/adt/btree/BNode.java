@@ -46,7 +46,7 @@ public class BNode<T extends Comparable<T>> {
 		return this.children.size() == 0;
 	}
 	public boolean isFull(){
-		return this.size()== order - 1;
+		return this.size() == order - 1;
 	}
 	public void addElement(T element){
 		this.elements.add(element);
