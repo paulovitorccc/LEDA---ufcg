@@ -1,9 +1,8 @@
-package adt.heap;
+package heap;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
-import util.Util;
 
 /**
  * O comportamento de qualquer heap é definido pelo heapify. Neste caso o
@@ -151,14 +150,17 @@ public class HeapImpl<T extends Comparable<T>> implements Heap<T> {
 
 	@Override
 	public T[] heapsort(T[] array) {
-		Comparator<Integer> oldComparator = (Comparator<Integer>) this.comparator;
-		Comparator<Integer> newComparator = (Comparator<Integer>) ((o1, o2) -> o2.compareTo(o1));
-		this.comparator = (Comparator<T>) newComparator;
-		buildHeap(array);
-		for (int i = 0; i < array.length; i++) {
-			array[i] = this.extractRootElement();
+		if(array[0] != null){
+			Comparator<Integer> oldComparator = (Comparator<Integer>) this.comparator;
+			Comparator<Integer> newComparator = (Comparator<Integer>) ((o1, o2) -> o2.compareTo(o1));
+			this.comparator = (Comparator<T>) newComparator;
+			buildHeap(array);
+			for (int i = 0; i < array.length; i++) {
+				array[i] = this.extractRootElement();
+			}
+			this.comparator = (Comparator<T>) oldComparator;
+			return array;
 		}
-		this.comparator = (Comparator<T>) oldComparator;
 		return array;
 	}
 
@@ -178,5 +180,29 @@ public class HeapImpl<T extends Comparable<T>> implements Heap<T> {
 	public T[] getHeap() {
 		return heap;
 	}
+
+	public void setHeap(T[] heap) {
+		this.heap = heap;
+	}
+	
+	
+	
+	//QUESTAO DA LISTA
+	
+	public T[] elementsByLevel(int level){
+		int indexPotencia = (int) Math.pow(2, level);
+		int inicio = indexPotencia - 1;
+		int fim = inicio + inicio;
+		T[] array = (T[]) new Comparable[indexPotencia];
+		int cont = 0;
+		for(int i = inicio; i <= fim; i++){
+			if(i < size() && heap[i] != null){
+				array[cont] = heap[i];
+				cont++;
+			}
+		}
+		return array;
+	}
+	
 
 }
