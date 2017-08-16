@@ -8,14 +8,14 @@ public class Main {
 		
 		PilhaUsandoHeap<Informacao> pilha = new PilhaUsandoHeap<Informacao>(10);
 		
-		Informacao i1 = new Informacao("f", 3);
-		Informacao i2 = new Informacao("c", 6);
-		Informacao i3 = new Informacao("e", 4);
-		Informacao i4 = new Informacao("a", 8);
-		Informacao i5 = new Informacao("d", 5);
-		Informacao i6 = new Informacao("h", 1);
-		Informacao i7 = new Informacao("b", 7);
-		Informacao i8 = new Informacao("g", 2);
+		Informacao i1 = new Informacao("f");
+		Informacao i2 = new Informacao("c");
+		Informacao i3 = new Informacao("e");
+		Informacao i4 = new Informacao("a");
+		Informacao i5 = new Informacao("d");
+		Informacao i6 = new Informacao("h");
+		Informacao i7 = new Informacao("b");
+		Informacao i8 = new Informacao("g");
 		
 		pilha.push(i1);
 		pilha.push(i2);
@@ -25,7 +25,6 @@ public class Main {
 		pilha.push(i6);
 		pilha.push(i7);
 		pilha.push(i8);
-		System.out.println(Arrays.toString(pilha.heap.elementsByLevel(3)));
 		
 		for(int i = 0; i < 8; i++){
 			System.out.println(pilha.pop());

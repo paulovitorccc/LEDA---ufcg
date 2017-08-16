@@ -5,9 +5,9 @@ public class Informacao implements Comparable<Informacao> {
 	private String data;
 	int key;
 
-	public Informacao(String newData, int newKey) {
+	public Informacao(String newData) {
 		data = newData;
-		key = newKey;
+		key = (int) System.currentTimeMillis();
 	}
 
 	@Override

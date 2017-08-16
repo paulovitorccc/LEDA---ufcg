@@ -19,9 +19,9 @@ public class MergeDeArrays {
 		}
 		System.out.println(heap.size());
 		Integer[] arrayFinal = new Integer[array.length + array2.length];
-		for (int i = 0; i < arrayFinal.length; i++) {
-			arrayFinal[i] = heap.extractRootElement();
-		}
+//		for (int i = 0; i < arrayFinal.length; i++) {
+//			arrayFinal[i] = heap.extractRootElement();
+//		}
 		System.out.println(Arrays.toString(heap.heapsort(arrayFinal)));
 
 	}
