@@ -1,1 +1,1 @@
-# Códigos da disciplina LEDA - terceiro período (UFCG)
+# Códigos da disciplina Laboratório de Estrutura de Dados e Algoritmos(LEDA) - terceiro período (UFCG)
